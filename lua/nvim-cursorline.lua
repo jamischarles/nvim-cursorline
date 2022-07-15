@@ -54,7 +54,7 @@ function M.setup(options)
     wo.cursorline = true
     au("WinEnter", {
       callback = function()
-        wo.cursorline = true
+        wo.cursorline = false
       end,
     })
     au("WinLeave", {
@@ -65,7 +65,7 @@ function M.setup(options)
     au({ "CursorMoved", "CursorMovedI" }, {
       callback = function()
         if M.options.cursorline.number then
-          wo.cursorline = false
+          wo.cursorline = true
         else
           wo.cursorlineopt = "number"
         end
@@ -74,7 +74,7 @@ function M.setup(options)
           0,
           vim.schedule_wrap(function()
             if M.options.cursorline.number then
-              wo.cursorline = true
+              wo.cursorline = false
             else
               wo.cursorlineopt = "both"
             end
