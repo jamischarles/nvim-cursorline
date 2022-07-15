@@ -64,6 +64,7 @@ function M.setup(options)
     })
     au({ "CursorMoved", "CursorMovedI" }, {
       callback = function()
+        wo.cursorline = true -- immediately show cursorline on move
         if M.options.cursorline.number then
           wo.cursorline = true
         else
@@ -74,7 +75,7 @@ function M.setup(options)
           0,
           vim.schedule_wrap(function()
             if M.options.cursorline.number then
-              wo.cursorline = false
+              wo.cursorline = false -- hide the cursorline after timeout
             else
               wo.cursorlineopt = "both"
             end
