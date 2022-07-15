@@ -1,5 +1,8 @@
-# nvim-cursorline
+### How this fork differs:
+Flips the functionality. Hidden by default. Higlights line after you move cursors. Hides line after short timeout. 
 
+
+# nvim-cursorline
 Highlight words and lines on the cursor for Neovim
 
 - Underlines the word under the cursor.
